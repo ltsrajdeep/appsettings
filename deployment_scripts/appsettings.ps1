@@ -9,6 +9,9 @@ Function Flatten_Appsettings
 
     foreach($obj_property in $obj_local.PsObject.Properties)
     {
+        if ($obj_property.Name -cmatch '^[A-Z_]*$') {
+            continue;
+        }
         if ($obj_property.Name -eq "Values") { #to handle "Values" object 
             $local = $obj_property.Value | ConvertTo-Json
             Flatten_Appsettings $local "" -1 #Call # 2 
@@ -63,10 +66,10 @@ $existing_appsettings = az functionapp config appsettings list --name $app_name 
 
 $existing_appsettings_obj = $existing_appsettings  | ConvertFrom-Json
 
-$existing_appsettings_obj_name = $existing_appsettings_obj | ForEach-Object {$_.psobject.properties.name -cnotmatch '^[A-Z_]*$' }
+$existing_appsettings_obj_name = $existing_appsettings_obj | ForEach-Object { if($_.name -cnotmatch '^[A-Z_]*$'){$_.name} }
 
 if($existing_appsettings_obj_name.length -gt 0){
-    az functionapp config appsettings delete --name $app_name --resource-group $app_resource_group --setting-names $existing_appsettings_obj_name.name
+    az functionapp config appsettings delete --name $app_name --resource-group $app_resource_group --setting-names $existing_appsettings_obj_name
 }
 ######-------------------------------------------------------------------
 
