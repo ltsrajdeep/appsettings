@@ -56,10 +56,6 @@ $app_name = $args[3]
 $local = Get-Content $path
 Flatten_Appsettings $local "" -1 #Call # 1 : The script is based on recursion logic. the third parameter "-1" is only useful in dectionary scenario
 
-
-$appsetings = $hash | ConvertTo-Json
-$appsetings | Out-File $output_path
-
 az login --service-principal --username http://DevOpsPrincipal --password 1b323ff5-a85a-4aa8-b1e7-be5f8d3f3353 --tenant 0cbb91b2-6f1b-4899-a000-7520dc611d4e
 
 ######------Delete existing appsetting entry
@@ -74,7 +70,14 @@ if($existing_appsettings_obj_name.length -gt 0){
 }
 ######-------------------------------------------------------------------
 
-az functionapp config appsettings set --name $app_name --resource-group $app_resource_group --settings @$output_path
+if ($hash.length -gt 0)
+{
+	$appsetings = $hash | ConvertTo-Json
+	$appsetings | Out-File $output_path
+	
+	az functionapp config appsettings set --name $app_name --resource-group $app_resource_group --settings @$output_path
+}
+
 
 
 #######------Delete existing connectionString entry
@@ -88,5 +91,7 @@ if($existing_conStr_obj_name.length -gt 0){
     az webapp config connection-string delete --name $app_name --resource-group $app_resource_group --setting-names $existing_conStr_obj_name.name
 }
 ######-----------------------------------
-
-az webapp config connection-string set -g $app_resource_group -n $app_name -t SQLServer --settings $connectionString
+if($connectionString.length -gt 0)
+{
+	az webapp config connection-string set -g $app_resource_group -n $app_name -t SQLServer --settings $connectionString
+}
