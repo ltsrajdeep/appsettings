@@ -1,11 +1,68 @@
 {
-	"IsEncrypted": false,
-	"AzureWebJobsStorage": "UseDevelopmentStorage=true",
-	"AzureWebJobsDashboard": "UseDevelopmentStorage=true",
-	"FUNCTIONS_WORKER_RUNTIME": "dotnet",
-	"TEST": "1",
-	"TEST_RDD": "123",
-	"newKey":"abcd",
-	"Email":{ "key":"qwer"},
-	"DisableProcessAdvertQueueTriggers": false
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "DisableAutoTriggers": true,
+    "ProviderOrdersUpdateQueue": "test-provider-orders-update",
+    "OrdersServiceStorage": "dfgldhgdhg",
+    "OrdersCreateQueue": "test-orders-create",
+    "ProviderOrdersCreateQueue": "test-provider-orders-create",
+    "CompleteOrderQueue": "test-complete-orders",
+    "ProviderOrderCreatePoisonQueue": "test-provider-orders-create-poison",
+    "TablesToSync": "",
+    "PayoutSchedule": "0 0 10 1 * *"
+  },
+  "Api2Cart": {
+    "ApiKey": "dftervxvrt",
+    "Fields": "force_all"
+  },
+  "Stripe": {
+    "SecretKey": "dfgertfvxcbv"
+  },
+  "Functions": {
+    "ScraperApiHost": "https://lts-scraper-api.azurewebsites.net/",
+    "ScraperApiKey": "ygutyiyu56hfhnfh",
+    "ScraperAPIVersion": "api/v1/",
+    "ImporterApiHost": "https://lts-importer.azurewebsites.net/",
+    "ImporterApiKey": "hjmbnmghjtyutvnvbn/mz/LjtUHzOga8Q==",
+    "ImporterApiVersion": "api/v1/"
+  },
+  "Slack": {
+    "WebhookKeys": {
+      "BasketRefundsCancellations": "dsjghfdkljghdlfkjgh"
+    }
+  },
+  "Messaging": {
+    "ProductStorage": "shdfghjsgfgfdgfs",
+    "UpdateStockQueue": "test-update-product-stock"
+  },
+  "Payout": {
+    "SendEmailSwitch": true,
+    "GooglePayoutFolderId": "dfgdgdg",
+    "GoogleSecretkeyFileName": "fghgfhfghjfjghj.json",
+    "RetailerIdToSkipPayout": "2178,2182,2179"
+  },
+  "Emails": {
+    "DebugMode": true,
+    "DebugRecipient": "raj@lovethesales.com",
+    "SendgridApiKey": "xcgfdrt34gfdfg",
+    "OrderConfirmationTemplateId": "d-dfghfhfh",
+    "PayoutTemplateId": "d-fghfhfgh",
+    "AlertRecipients": "dgdfgdfgrevxcv"
+  },
+  "ConnectionStrings": {
+    "SqlServer": "test",
+    "Reporting": ""
+  },
+  "Logging": {
+    "UseConsole": true,
+    "UseQueueing": false,
+    "StorageAccountUrl": "ds5tdrgfdgdbvfftyhfyh",
+    "ErrorsQueue": "test-application-errors",
+    "LogsQueue": "test-application-logs",
+    "ServiceMessagesQueue": "test-services-messages",
+    "Test": true
+  }
 }
