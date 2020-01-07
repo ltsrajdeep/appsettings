@@ -1,3 +1,14 @@
 {
 	"newKey":"test"
-}
+},
+  "Api2Cart": {
+    "ApiKey": "dftervxvrt",
+    "Fields": "force_all"
+  },
+  "Stripe": {
+    "SecretKey": "dfgertfvxcbv"
+  },
+  "ConnectionStrings": {
+    "SqlServer": "test",
+    "Reporting": ""
+  }
