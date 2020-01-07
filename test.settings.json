@@ -13,7 +13,7 @@
  },
  "Messaging": {
    "CrunchQueues": {
-     "UK": "messages-to-crunch-uk",
+     "UK": "test",
      "EU": "messages-to-crunch-eu",
      "US": "messages-to-crunch-us"
    },
