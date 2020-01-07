@@ -4,12 +4,12 @@
    "AzureWebJobsDashboard": "UseDevelopmentStorage=true"
  },
  "ConnectionStrings": {
-   "SqlServer": "Data Source=xvqe8it9vf.database.windows.net,1433;Initial Catalog=lts-scraping;Persist Security Info=True;User ID=ltsappuser;Password=Headforthesales1;Connect Timeout=60"
+   "SqlServer": "local"
  },
  "Api2Cart": {
-   "ApiKey": "7c574ef4ce4882545fe01f10463b017a",
-   "ProductWebhookUrl": "https://lts-scraper-webhooks-uk.azurewebsites.net/api/v1/webhooks/api2cart?code=BJ1U43dVdtmbhajcL5AOxVa9czjklllhflVIL744Dn65cXLCSm9kcg==",
-   "OrderWebhookUrl": "https://lts-orders-service.azurewebsites.net/api/v1/webhooks/api2cart?code=ppZjGmmLJKDcs3VsII5gCA//OGBzUYzr/Q1iyM4Mb8aaCgcUsMb3Eg=="
+   "ApiKey": "local",
+   "ProductWebhookUrl": "local",
+   "OrderWebhookUrl": "local"
  },
  "Messaging": {
    "CrunchQueues": {
