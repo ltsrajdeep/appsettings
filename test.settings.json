@@ -1,16 +1,32 @@
 {
-"Values": {
-	"newKey":"test"
-},
-  "Api2Cart": {
-    "ApiKey": "dftervxvrt",
-    "Fields": "force_all"
-  },
-  "Stripe": {
-    "SecretKey": "dfgertfvxcbv"
-  },
-  "ConnectionStrings": {
-    "SqlServer": "test",
-    "Reporting": ""
-  }
+ "Values": {
+   "AzureWebJobsStorage": "test",
+   "AzureWebJobsDashboard": "test"
+ },
+ "ConnectionStrings": {
+   "SqlServer": "test"
+ },
+ "Api2Cart": {
+   "ApiKey": "test",
+   "ProductWebhookUrl": "test",
+   "OrderWebhookUrl": "test"
+ },
+ "Messaging": {
+   "CrunchQueues": {
+     "UK": "messages-to-crunch-uk",
+     "EU": "messages-to-crunch-eu",
+     "US": "messages-to-crunch-us"
+   },
+   "DeleteImporterProductQueue": "delete-importer-product",
+   "ProductQueues": [
+     {
+       "DeleteQueueName": "test",
+       "ProcessQueueName": "test"
+     },
+     {
+       "DeleteQueueName": "test",
+       "ProcessQueueName": "test"
+     }
+   ]
+ }
 }
