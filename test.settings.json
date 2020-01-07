@@ -1,4 +1,5 @@
 {
+{
 	"newKey":"test"
 },
   "Api2Cart": {
@@ -12,3 +13,4 @@
     "SqlServer": "test",
     "Reporting": ""
   }
+}
